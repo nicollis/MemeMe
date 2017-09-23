@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +20,69 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jIj-7I-sV2">
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="FoA-Xd-Vca"/>
+                                    <constraint firstAttribute="width" constant="240" id="r5p-xA-AqE"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eb4-zz-qK6" userLabel="TOP">
+                                <rect key="frame" x="68" y="213.5" width="240" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-Ve-LrO">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Pick" id="rrQ-oh-PRM">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="9gP-39-j6O"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Shoot" id="jSX-NE-B98">
+                                        <connections>
+                                            <action selector="takeAPicture:" destination="BYZ-38-t0r" id="Z3t-zI-IqI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Share" id="UQn-KU-Qw5" userLabel="Share">
+                                        <connections>
+                                            <action selector="shareMeme:" destination="BYZ-38-t0r" id="WAI-m2-Dbb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzS-8J-AVf" userLabel="BOTTOM">
+                                <rect key="frame" x="68" y="436.5" width="240" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qto-Ve-LrO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6mn-Jm-59p"/>
+                            <constraint firstItem="Eb4-zz-qK6" firstAttribute="top" secondItem="jIj-7I-sV2" secondAttribute="top" id="C2p-bg-XA8"/>
+                            <constraint firstItem="fzS-8J-AVf" firstAttribute="centerX" secondItem="jIj-7I-sV2" secondAttribute="centerX" id="CTK-fJ-YbG"/>
+                            <constraint firstItem="jIj-7I-sV2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IN2-ZV-Oc0"/>
+                            <constraint firstItem="jIj-7I-sV2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="c6r-kj-wcb"/>
+                            <constraint firstItem="Eb4-zz-qK6" firstAttribute="centerX" secondItem="jIj-7I-sV2" secondAttribute="centerX" id="g71-ph-Q1u"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qto-Ve-LrO" secondAttribute="bottom" id="jtn-lR-cbO"/>
+                            <constraint firstItem="Eb4-zz-qK6" firstAttribute="width" secondItem="jIj-7I-sV2" secondAttribute="width" id="lYR-K2-a2l"/>
+                            <constraint firstItem="fzS-8J-AVf" firstAttribute="bottom" secondItem="jIj-7I-sV2" secondAttribute="bottom" id="p9Y-DO-pyc"/>
+                            <constraint firstItem="fzS-8J-AVf" firstAttribute="width" secondItem="jIj-7I-sV2" secondAttribute="width" id="ssh-qo-RKQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Qto-Ve-LrO" secondAttribute="trailing" id="uJi-wT-f15"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ImagePreview" destination="jIj-7I-sV2" id="FXe-BN-BmJ"/>
+                        <outlet property="bottomText" destination="fzS-8J-AVf" id="sSU-yE-V2A"/>
+                        <outlet property="cameraButton" destination="jSX-NE-B98" id="6E9-ee-gkg"/>
+                        <outlet property="shareButton" destination="UQn-KU-Qw5" id="VdE-Fe-MGL"/>
+                        <outlet property="topText" destination="Eb4-zz-qK6" id="Rbo-N6-D2U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
